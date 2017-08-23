@@ -8,11 +8,15 @@ public class MySequentialBehaviourAgent extends Agent {
 	protected void setup() {
 		System.out.println(getLocalName() + ": I have been created"); 
 		SequentialBehaviour sb = new SequentialBehaviour();
+		
 		MyBehaviour a = new MyBehaviour(1, 3);
 		MyBehaviour b = new MyBehaviour(2, 10);
-		MyBehaviour c = new MyBehaviour(3, 2); sb.addSubBehaviour(a);
+		MyBehaviour c = new MyBehaviour(3, 2); 
+		
+		sb.addSubBehaviour(a);
 		sb.addSubBehaviour(b);
 		sb.addSubBehaviour(c);
+		
 		this.addBehaviour(sb);
 	}
 
